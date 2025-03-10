@@ -1,0 +1,26 @@
+meta {
+  name: Register a test user
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8085/api/users/register
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "test",
+    "password": "test",
+    "enabled": true,
+    "roles": [
+      {
+        "id": 1,
+        "name": "ROLE_USER"
+      }
+    ],
+    "tokenExpiration": "2025-12-31T23:59:59"
+  }
+}
