@@ -1,17 +1,19 @@
-create table IF NOT exists roles(
-    id INT not null auto_increment,
-    name varchar(255),
-primary key (id)) engine=InnoDB;
+CREATE TABLE IF NOT EXISTS roles(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB;
 
-create table IF NOT exists users (
-    id INT not null auto_increment,
-    username varchar(100),
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
-    enabled boolean,
-primary key (id)) engine=InnoDB;
+    enabled BOOLEAN,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB;
 
 # On Utilise toujours des liste de roles, pour permettre l'ajout de nouveaux roles a un utilisateur
-CREATE TABLE IF NOT exists users_roles (
+CREATE TABLE IF NOT EXISTS users_roles (
     users_id INT,
     roles_id INT,
     FOREIGN KEY (users_id) REFERENCES users(id),
@@ -23,5 +25,17 @@ CREATE TABLE IF NOT exists users_roles (
 INSERT INTO roles (name) VALUES
 ('ROLE_ADMIN'),
 ('ROLE_USER'),
-('ROLE_TESTER')
-;
+('ROLE_SCRAPER');
+
+CREATE TABLE IF NOT EXISTS irish_breweries (
+     id CHAR(36) PRIMARY KEY,
+     name VARCHAR(255) NOT NULL,
+     brewery_type VARCHAR(255) NOT NULL,
+     address_1 VARCHAR(255),
+     city VARCHAR(255) NOT NULL,
+     state_province VARCHAR(255) NOT NULL,
+     postal_code VARCHAR(255) NOT NULL,
+     country VARCHAR(255) NOT NULL,
+     website_url VARCHAR(255),
+     phone VARCHAR(255)
+);
