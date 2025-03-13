@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/scraper")
 public class BreweryController {
 
     @Autowired
     private BreweryService breweryService;
 
-    @GetMapping("/user/breweries")
-    public List<BreweryDTO> getBreweries() {
-        return breweryService.getBreweries();
+    @GetMapping("/irish-breweries")
+    public List<BreweryDTO> getAndSaveIrishBreweries() {
+        return breweryService.fetchAndSaveAllIrishBreweries();
     }
 }
