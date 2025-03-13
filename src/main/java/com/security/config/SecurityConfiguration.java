@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -64,6 +65,11 @@ public class SecurityConfiguration {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
     // Configuration de la chaîne de filtres de sécurité
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -73,7 +79,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/admin/**").hasRole("ADMIN") // Accès admin
                         .requestMatchers("/user/**").hasRole("USER") // Accès étudiant
-                        .requestMatchers("/tester/**").hasRole("TESTER") // Accès enseignant
+                        .requestMatchers("/scraper/**").hasRole("SCRAPER") // Accès enseignant
                         // Accès public a certaines routes, notamment la page d'accueil, l'inscription et le login
                         .requestMatchers("/", "/index", "/test", "/test/*", "/api/users/register", "/api/login").permitAll()
                         .anyRequest().authenticated() // Toutes les autres requêtes nécessitent une authentification
