@@ -80,6 +80,7 @@ public class BreweriesConfiguration {
                         .requestMatchers("/admin/**").hasRole("ADMIN") // Accès admin
                         .requestMatchers("/user/**").hasRole("USER") // Accès étudiant
                         .requestMatchers("/scraper/**").hasRole("SCRAPER") // Accès enseignant
+                        .requestMatchers("/breweries/**").hasRole("ADMIN") // Accès CRUD
                         // Accès public a certaines routes, notamment la page d'accueil, l'inscription et le login
                         .requestMatchers("/", "/index", "/test", "/test/*", "/api/users/register", "/api/login").permitAll()
                         .anyRequest().authenticated() // Toutes les autres requêtes nécessitent une authentification

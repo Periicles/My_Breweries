@@ -49,7 +49,6 @@ public class LoginController {
             return ResponseEntity.ok(new AuthResponseDTO(token, userName));
         } catch (AuthenticationException e) {
 
-
             return ResponseEntity.badRequest().body("Invalid username or password");
         }
     }
