@@ -81,7 +81,7 @@ public class BreweriesConfiguration {
                         .requestMatchers("/user/**").hasRole("USER") // Accès étudiant
                         .requestMatchers("/scraper/**").hasRole("SCRAPER") // Accès enseignant
                         // Accès public a certaines routes, notamment la page d'accueil, l'inscription et le login
-                        .requestMatchers("/", "/index", "/test", "/test/*", "/api/users/register", "/api/login").permitAll()
+                        .requestMatchers( "/index", "/test", "/test/*", "/api/users/register", "/api/login").permitAll()
                         .anyRequest().authenticated() // Toutes les autres requêtes nécessitent une authentification
                 )
                 .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class); // Ajout du filtre JWT, permettant de vérifier le token et le rôle de l'utilisateur

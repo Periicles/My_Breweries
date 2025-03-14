@@ -33,12 +33,6 @@ public class BreweriesDTO {
     @JsonProperty("country")
     private String country;
 
-    @JsonProperty("longitude")
-    private String longitude;
-
-    @JsonProperty("latitude")
-    private String latitude;
-
     @JsonProperty("phone")
     private String phone;
 
