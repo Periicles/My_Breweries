@@ -1,0 +1,18 @@
+meta {
+  name: login user student
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:8085/api/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "BaseUser",
+    "password": "password"
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Authentication validation
+  type: http
+  seq: 8
+}
+
+get {
+  url: http://localhost:8085/admin/users/test
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzQxODcyODgyLCJleHAiOjE3NDE4NzY0ODIsInJvbGVzIjpbIlJPTEVfQURNSU4iXX0.D7QWtuEZQFtbUtP1u5WKqIuvqqQ_tuIUs3ATktbLj6xjwcgIYn1Uw8oTfeX-QfeFyaBYKFj3ZUi7BtVLmhm2YQ
+}
