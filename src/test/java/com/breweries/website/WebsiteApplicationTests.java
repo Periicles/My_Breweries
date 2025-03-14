@@ -1,4 +1,4 @@
-package com.security.website;
+package com.breweries.website;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
