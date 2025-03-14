@@ -1,8 +1,8 @@
-package com.security.service;
+package com.breweries.service;
 
-import com.security.entity.Role;
-import com.security.entity.User;
-import com.security.repository.UserRepository;
+import com.breweries.entity.Role;
+import com.breweries.entity.User;
+import com.breweries.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

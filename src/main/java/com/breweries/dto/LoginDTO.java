@@ -1,4 +1,4 @@
-package com.security.dto;
+package com.breweries.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AuthResponseDTO {
-    private String token;
+public
+class LoginDTO {
     private String username;
+    private String password;
 }

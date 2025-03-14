@@ -1,4 +1,4 @@
-package com.security.entity;
+package com.breweries.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

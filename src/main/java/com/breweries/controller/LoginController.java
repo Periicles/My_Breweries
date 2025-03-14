@@ -1,10 +1,10 @@
-package com.security.controller;
+package com.breweries.controller;
 
-import com.security.config.JwtTokenProvider;
-import com.security.dto.AuthResponseDTO;
-import com.security.dto.LoginDTO;
-import com.security.entity.User;
-import com.security.service.UserService;
+import com.breweries.config.JwtTokenProvider;
+import com.breweries.dto.AuthResponseDTO;
+import com.breweries.dto.LoginDTO;
+import com.breweries.entity.User;
+import com.breweries.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

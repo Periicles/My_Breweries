@@ -1,4 +1,4 @@
-package com.security.dto;
+package com.breweries.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class BreweryDTO {
+public class BreweriesDTO {
 
     // Getters and setters for all fields
     @JsonProperty("id")

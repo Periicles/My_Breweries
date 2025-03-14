@@ -1,7 +1,7 @@
-package com.security.controller;
+package com.breweries.controller;
 
-import com.security.entity.User;
-import com.security.service.UserService;
+import com.breweries.entity.User;
+import com.breweries.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
